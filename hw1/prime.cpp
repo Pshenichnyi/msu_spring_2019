@@ -7,7 +7,7 @@
 
 int gener_prime_seq (int *a, int n, int x) //сгенерировать массив простых чисел меньших x
 {
-	int i;
+    int i;
 	int p = 3; //простое число которое и будем добавлять в массив
 	int size = 1; //размер генерируемого массива
 	a[0] = 2;
@@ -83,8 +83,7 @@ int main(int argc, char* argv[])
 	int k = 0;
 	for (int i = 0; i < argc - 1; i += 2)
 	{
-		k = count_prime (Data, Size, p, intervals[i], intervals[i+1]);
-		//printf("%d\n",k);
+	    k = count_prime (Data, Size, p, intervals[i], intervals[i+1]);
 		std::cout << k << std::endl;
 	}
 	
