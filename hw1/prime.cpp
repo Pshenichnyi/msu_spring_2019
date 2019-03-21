@@ -84,7 +84,8 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < argc - 1; i += 2)
 	{
 		k = count_prime (Data, Size, p, intervals[i], intervals[i+1]);
-		printf("%d\n",k);
+		//printf("%d\n",k);
+		std::cout << k << std::endl;
 	}
 	
 	delete[] p;
