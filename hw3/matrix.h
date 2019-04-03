@@ -6,7 +6,7 @@ class Matrix
 private:
     int **matr;
     int cols;
-    int rols;
+    int rows;
 
     class Array
     {
@@ -33,15 +33,15 @@ private:
 public:
     Matrix(int x, int y)
     {
-        rols = x;
+        rows = x;
         cols = y;
-        matr = new int* [rols];
-        for (int i = 0; i < rols; i ++)
+        matr = new int* [rows];
+        for (int i = 0; i < rows; i ++)
             matr[i] = new int[cols];
     };
     ~Matrix()
     {
-        for (int i = 0; i < rols; i ++)
+        for (int i = 0; i < rows; i ++)
             delete [] matr[i];
         delete [] matr;
     }
@@ -56,7 +56,7 @@ public:
 
     const Array operator[](int j) const
     {
-        if(j < rols && j >-1)
+        if(j < rows && j >-1)
         {
             Array arr(matr[j], cols);
             return arr;
@@ -72,10 +72,10 @@ public:
 
     bool operator == (const Matrix &matr_2) const
     {
-        if (cols != matr_2.cols || rols != matr_2.rols)
+        if (cols != matr_2.cols || rows != matr_2.rows)
             return false;
         else  
-            for (int i = 0; i < rols; i ++)
+            for (int i = 0; i < rows; i ++)
                 for (int j = 0; j < cols; j ++)
                 {
                     if (matr[i][j] != matr_2.matr[i][j])
@@ -92,7 +92,7 @@ public:
 
     void operator *= (int C)
     {
-        for (int i = 0; i < rols; i ++)
+        for (int i = 0; i < rows; i ++)
             for (int j = 0; j < cols; j++)
             {
                 (*this)[i][j] *= C;
